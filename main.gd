@@ -19,6 +19,7 @@ func game_over():
 	$HUD.show_game_over()
 
 func new_game():
+	get_tree().call_group("mobs", "queue_free")
 	score = 0
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
